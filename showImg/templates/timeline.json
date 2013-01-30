@@ -1,0 +1,78 @@
+
+{
+    "timeline":
+    {	
+		"headline":"出生",
+        "type":"default",
+		"text":"<p>公元前14～前11世纪</p><p>兽骨是我国最原始的文化传承载体。</p>",
+		"asset":{
+			"media":"../static/img/wedding (1).jpg",
+			"thumbnail":"../static/img/wedding (1).jpg",
+			"credit":"",
+			"caption":""
+         },
+        "date": [
+            {
+                "startDate":"1991",
+                "headline":"开口说话",
+                "text":"<p>印刷术的改革，知识传递效率得到了飞跃性的突破。</p>",
+                "asset":
+                {
+                    "media":"../static/img/wedding (2).jpg",
+										"thumbnail":"../static/img/wedding (2).jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+			{
+                "startDate":"1992",
+                "headline":"开始走路",
+                "text":"开始了我国最原始的教学模式",
+                "asset":
+                {
+                    "media":"../static/img/wedding (3).jpg",
+					"thumbnail":"../static/img/wedding (3).jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+			{
+                "startDate":"1996",
+                "headline":"幼儿园",
+                "text":"传统的一对多授课方式进行文化普及20世纪",
+                "asset":
+                {
+                    "media":"../static/img/wedding (4).jpg",
+					"thumbnail":"../static/img/wedding (4).jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+			{
+                "startDate":"1998",
+                "headline":"小学",
+                "text":"高新科技带来的教学载体改革，引领教学新模式",
+                "asset":
+                {
+                    "media":"../static/img/wedding (5).jpg",
+					"thumbnail":"../static/img/wedding (5).jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+
+			{
+                "startDate":"2003",
+                "headline":"初中",
+                "text":"",
+                "asset":
+                {
+                    "media":"../static/img/wedding (6).jpg",
+					"thumbnail":"../static/img/wedding (6).jpg",
+                    "credit":"",
+                    "caption":"我们的产品即将上线"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>相册</title>
+<link rel="stylesheet" href="../static/css/base.css"/>
+<link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
+<!--<link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.css">-->
+
+<!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container"> 
+  <!-- head-->
+  <div class="head">
+    <ul class="nav g-inner clearfix">
+      <li class="nav_logo"><strong>logo </strong>标题</li>
+      <li><a href="#">我的首页</a></li>
+      <li><a href="#">我的相册</a></li>
+      <li><a href="#"></a></li>
+      <ul class="fr nav">
+        <li>
+          <input id="search" type="search" placeholder="搜索" autofocus x-webkit-speech>
+        </li>
+        <li class="nav_user"> <a href="#"><img src="../static/img/medium/3.jpg" alt="用户头像"><b></b></a>
+          <ul class="user_infoLi">
+            <li class="mine"><a href="#"><i class="icon16 icon-mine"></i>个人中心</a></li>
+            <li class="mobile"><a href="#"><i class="icon16 icon-mobile"></i>客户端下载</a></li>
+            <li class="friends"><a href="#"><i class="icon16 icon-friends"></i>查找好友</a></li>
+            <li class="about"><a href="#"><i class="icon16 icon-about"></i>关于&amp;帮助</a><a href="#">用户反馈</a><a href="#">友情链接</a><a href="#">加入我们</a></li>
+            <li class="settings"><a href="#"><i class="icon16 icon-settings"></i>帐号设置</a><a href="#">退出登录</a></li>
+          </ul>
+        </li>
+      </ul>
+    </ul>
+  </div>
+  <section class="g-inner"> 
+    <!--用户信息-->
+    <div class="well user-info">
+      <div class="portrait"> <img src="../static/img/medium/3.jpg" alt="用户头像"> <a class="hide" href="#">更改头像</a> </div>
+      <div class="clearfix">
+        <div class="info-right">
+          <h2 class="name">conglvse</h2>
+          <p><span>女</span><span>现居浙江-杭州</span><span>出生于浙江-杭州</span></p>
+          <p><span class="url-desc">个人网址：www.baidu.com/p/conglvse</span> <a href="#" target="_blank">查看更多资料&gt;&gt;</a></p>
+        </div>
+        <ul class="user_atten inline clearfix">
+          <li><a href="#"><strong>62</strong><span>关注</span></a></li>
+          <li><a href="#"><strong>98</strong><span>粉丝</span></a></li>
+          <li><a href="#"><strong>117</strong><span>图片</span></a></li>
+        </ul>
+      </div>
+      <div class="upload_img">
+        <button class="btn-blue" href="#upload_img" data-toggle="modal" data-keyboard="ture" data-backdrop="true">上传图片</button>
+      </div>
+      <div class="img_nav"> 我的主页 > 相册《默认》 </div>
+    </div>
+    <!--相册-->
+    <ul id="waterfall" class="transitions album clearfix">
+      <li>
+          <h3>我的相册<small>(13)</small></h3>
+          <a class="albumImg" href="#">
+          	<span><img src="../static/img/medium/wedding (1).jpg" /></span>
+            <span><img src="../static/img/medium/wedding (2).jpg" /></span>
+            <span><img src="../static/img/medium/wedding (3).jpg" /></span>
+            <span><img src="../static/img/medium/wedding (4).jpg" /></span>
+            <span><img src="../static/img/medium/wedding (5).jpg" /></span>
+            <span><img src="../static/img/medium/wedding (6).jpg" /></span>
+            <span><img src="../static/img/medium/wedding (7).jpg" /></span>
+            <span><img src="../static/img/medium/wedding (8).jpg" /></span>
+            <span><img src="../static/img/medium/wedding (9).jpg" /></span>
+          </a>
+          <p><a class="fr" href="">去看看&gt;&gt;</a></p>
+          <div class="box-edit"> <i class="edit"></i> <i class="del"></i> </div>
+          <span class="rose">99</span>
+      </li>
+    </ul>
+  </section>
+  <footer>
+    <p class="copyright"><strong>Copyright ©2012 :</strong>TuZhan.Com All Rights Reserved 蜀ICP备10207566号-8</p>
+  </footer>
+</div>
+<!--
+-------------modals--> 
+<!--上传图片-->
+<div class="modal fade hide" id="upload_img"> <a class="close" data-dismiss="modal" >×</a>
+  <div class="modal_upload"><!--1.上传照片-->
+    <select class="selectPanel">
+      <option>默认相册</option>
+    </select>
+    <a class="a-blue" href="#">创建</a>
+    <div class="img_upload"> <a hidefocus href="JavaScript:void(0);">
+      <button class="btn-blue btn-large r5" type="button">点击上传照片</button>
+      <input type="file" hidefocus class="file" onChange="uploadImg()">
+      </a> </div>
+  </div>
+  <div class="upload_info hide">
+    <div class="modal-left"> <img id="showImg" src=""/> </div>
+    <div class="modal-right">
+      <form class="form_img">
+        <legend class="hide">图片信息</legend>
+        <fieldset>
+          <label for="PhotoName">名称：</label>
+          <input type="text" id="PhotoName" tabindex="1">
+          <label for="PhotoTags">标签：</label>
+          <input type="text" id="PhotoTags" placeholder="请输入标签，多个用逗号或空格分开" tabindex="2">
+          <label for="PhotoDesc">描述：</label>
+          <textarea id="PhotoDesc" rows="3" placeholder="请输入照片描述" tabindex="3"></textarea>
+        </fieldset>
+      </form>
+      <div class="login-mod">
+        <p> <a href="#" data-dismiss="modal">完成</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end
+-------------modals--> 
+<script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script> 
+<script type="text/javascript" src="../static/bootstrap/js/bootstrap.min.js"></script> 
+<script src="../static/js/waterFall.js"></script> 
+<script>
+function uploadImg(){
+	var file_name=$('.file').val();
+	$('.modal_upload').addClass('hide').siblings().removeClass('hide');
+	$('#showImg').attr('src',file_name);
+	time=new Date;
+	$('#PhotoName').attr('value',time.getTime()); 
+}
+
+</script>
+</body>
+</html>
