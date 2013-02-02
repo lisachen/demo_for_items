@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link rel="stylesheet" href="../static/css/base.css"/>
+<link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
+<!--[if lt IE 9]>
+        <script src="../static/js/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container"> 
+  <!-- head-->
+  <div class="head">
+    <ul class="nav g-inner clearfix">
+      <li class="nav_logo"><strong>logo </strong>标题</li>
+      <li><a href="#">我的首页</a></li>
+      <li><a href="#">我的相册</a></li>
+      <li><a href="#"></a></li>
+      <ul class="nav fr">
+          <li><input id="search" type="search" placeholder="搜索" autofocus x-webkit-speech></li>
+          <li class="nav_user">
+            <a href="#"><img src="../static/img/medium/3.jpg" alt="用户头像"><b></b></a>
+            <ul class="user_infoLi">
+              <li class="mine"><a href="#"><i class="icon16 icon-mine"></i>个人中心</a></li>
+              <li class="mobile"><a href="#"><i class="icon16 icon-mobile"></i>客户端下载</a></li>
+              <li class="friends"><a href="#"><i class="icon16 icon-friends"></i>查找好友</a></li>
+              <li class="about"><a href="#"><i class="icon16 icon-about"></i>关于&amp;帮助</a><a href="#">用户反馈</a><a href="#">友情链接</a><a href="#">加入我们</a></li>
+              <li class="settings"><a href="#"><i class="icon16 icon-settings"></i>帐号设置</a><a href="#">退出登录</a></li>
+            </ul>
+          </li>
+      </ul>
+    </ul>
+  </div>
+  <section class="g-inner"> 
+    <div class="well-large mt50">
+    	<h1 class="settings-title">个人设置</h1>
+        <div class="settings-nav">
+            <ul class="clearfix">
+                <li ><a href="#set-basic" data-toggle="tab">基本资料<span class="b-line"></span></a></li>
+                <li class="active"><a href="#setPortrait" data-toggle="tab">头像设置<span class="b-line"></span></a></li>
+                <li><a href="#setPassword" data-toggle="tab">修改密码<span class="b-line"></span></a></li>
+                <li><a href="#bindAccount" data-toggle="tab">账号绑定<span class="b-line"></span></a></li>
+                <li class="bubble"></li>
+            </ul>
+        </div>
+        <div class="settings-main tab-content">
+        	<div id="set-basic" class="tab-pane">
+                <form>
+                    <legend class="hide">基本资料</legend>
+                    <fieldset>
+                        <div class="settings-form">
+                            <label for="user_name">用户名：</label>
+                            <span id="user_name">sdfsdhg</span>
+                        </div>
+                        <div class="settings-form">
+                            <label for="nickname">昵&nbsp;&nbsp;&nbsp;称：</label>
+                            <input type="text" id="nickname" tabindex="1" >
+                        </div>
+                        <div class="settings-form">
+                            <label>性&nbsp;&nbsp;&nbsp;别：</label>
+                            <span for="sex-1"><input name="sex" id="sex-1" type="radio"  tabindex="2"> 男</span> 
+                            <span for="sex-2"><input name="sex" id="sex-2" type="radio" checked  tabindex="3"> 女</span>
+                        </div>
+                        <div class="settings-form">
+                            <label for="birthday">生&nbsp;&nbsp;&nbsp;日：</label>
+                            <select><option>--年--</option></select>
+                            <select><option>--月--</option></select>
+                            <select><option>--日--</option></select>
+                        </div>
+                         <div class="settings-form">
+                            <label for="hometown">出生地：</label>
+                            <select><option>--请选择--</option></select>
+                            <select><option>--请选择--</option></select>
+                            <select><option>--请选择--</option></select>
+                        </div>
+                         <div class="settings-form">
+                            <label for="reside">居住地：</label>
+                            <select><option>--请选择--</option></select>
+                            <select><option>--请选择--</option></select>
+                            <select><option>--请选择--</option></select>
+                        </div>
+                         <div class="settings-form">
+                            <label for="userdetail">简&nbsp;&nbsp;&nbsp;介：</label>
+                            <textarea id="userdetail" rows="6"></textarea>
+                        </div>
+                        <input type="submit" class="btn-blue" value="保存">
+                    </fieldset>
+                </form>
+            </div>
+        	<div id="setPortrait" class="tab-pane clearfix active">
+			  <div class="setting-profile fl">
+                <div class="portrait"> <img src="../static/img/medium/3.jpg" alt="用户头像"></div>
+              </div>
+              <div class="newPortrait img_upload "> 
+              	<a hidefocus href="JavaScript:void(0);">
+                <button class="btn-blue btn-large r5" type="button">点击更改头像</button>
+                <input type="file" hidefocus class="file" onChange="uploadImg()">
+                </a> 
+              </div>
+            </div>
+            <div id="setPassword" class="tab-pane">
+            </div>
+            <div id="bindAccount" class="tab-pane">
+            </div>
+        </div>
+    <div>
+  </section>
+  <footer>
+    <p class="copyright"><strong>Copyright ©2012 :</strong>TuZhan.Com All Rights Reserved 蜀ICP备10207566号-8</p>
+  </footer>
+</div>
+<!--
+-------------modals--> 
+
+<!--end
+-------------modals--> 
+<script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script> 
+<script type="text/javascript" src="../static/bootstrap/js/bootstrap.min.js"></script> 
+<script>
+
+</script>
+</body>
+</html>

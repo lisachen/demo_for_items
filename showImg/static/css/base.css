@@ -16,7 +16,7 @@ ol,ul{list-style:none}
 .fl{float:left;display:inline}.fr{float:right;display:inline}
 input,button,textarea{border:none 0; outline:none;}
 select{outline:none;}
-input[type="radio"],input[type="checkbox"]{
+input[type="checkbox"]{
 	margin-right:5px;
     margin-top:2px;
 	display:block;
@@ -29,6 +29,7 @@ img {
 }
 .inline{display:inline-block;}
 ul.inline>li,.nav>li{display: block; float: left;}
+.mt50{margin-top:50px;}
 /*--CSS comment--*/
 .a-blue{color:#3EA8CC;}
 .a-blue:hover{text-decoration:underline; color:#36C;}
@@ -105,7 +106,7 @@ font-size: 12px;
 	-webkit-transition: all .7s ease-in .1s;
 	-moz-transition: all .7s ease-in .1s;
 	-o-transition: all .7s ease-in .1s;
-	transition: all .7s ease-in .1s
+	transition: all .7s ease-in .1s;
 	}
 }
 /*小三角形*/
@@ -402,7 +403,6 @@ img.captcha {
 	cursor:pointer;
 }
 .upload_info .modal-left,#upload_img{
-	height:350px;
 	overflow:hidden;
 }
 .upload_info img{
@@ -429,13 +429,8 @@ img.captcha {
 	margin-bottom:20px;
 }
 /*----modal--end----*/
-
-.well{
-	background-color:#fff;
-  min-height: 50px;
-  padding:10px 19px;
-  margin-bottom: 10px;
-	-webkit-box-shadow:-1px 1px 10px #ccc;
+.well,.well-large{
+		background-color:#fff;min-height: 50px;margin-bottom: 10px;-webkit-box-shadow:-1px 1px 10px #ccc;
 -moz-box-shadow:1px 1px 10px #ccc;
 -ms-box-shadow:1px 1px 10px #ccc;
 -o-box-shadow:1px 1px 10px #ccc;
@@ -444,4 +439,10 @@ box-shadow:1px 1px 10px #ccc;
 -moz-border-radius: 5px;
 -khtml-border-radius:5px;
 border-radius:5px;
+}
+.well{ 
+  padding:10px 19px;	
+}
+.well-large{
+ padding:30px 49px;
 }
