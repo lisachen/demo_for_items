@@ -111,9 +111,9 @@ font-size: 12px;
 }
 /*小三角形*/
 .nav_user a b{
-	position:relative;
-	top:-2px;
-	left:3px;
+	position:absolute;
+	top:14px;
+	right:0px;
 	width: 0;
 	height: 0;
 	border-width: 4px 4px;
@@ -124,11 +124,25 @@ font-size: 12px;
  -moz-transition: -moz-transform .2s ease-in;
  -o-transition: -o-transform .2s ease-in;
  transition: transform .2s ease-in;
+ -webkit-transition: -webkit-transform .2s ease-in;
+-moz-transition: -webkit-transform .2s ease-in;
+-o-transition: -webkit-transform .2s ease-in;
+transition: -webkit-transform .2s ease-in
 }
-.nav_user a:hover b{
+.nav_user:hover a b{
+	filter: progid:dximagetransform.microsoft.basicimage(rotation=2);
 	border-color:transparent transparent #aaa;
-	top:-6px;
+	-moz-transform: rotate(180deg);
+	-moz-transform-origin: 50% 30%;
+	-webkit-transform: rotate(180deg);
+	-webkit-transform-origin: 50% 30%;
+	-o-transform: rotate(180deg);
+	-o-transform-origin: 50% 30%;
+	transform: rotate(180deg);
+	transform-origin: 50% 30%;
+	top:16px;
 }
+
 /*-----icon-----*/
 .icon16{
 	position: absolute;

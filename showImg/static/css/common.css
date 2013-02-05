@@ -41,8 +41,8 @@
 .user_infoLi {
 	position: absolute;
 	display: none;
-	right: 5px;
-	top: 24px;
+	right:0px;
+	top: 32px;
 	background: #FFF;
 	width: 160px;
 	white-space: nowrap;
