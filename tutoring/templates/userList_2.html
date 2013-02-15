@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../static/css/bootstrap.css"rel="stylesheet">
+<style>
+/*--用户列表--*/
+.usersList {
+	position:fixed;
+	top:50px;
+	right:0px;
+	width:100px;
+	background:#fff;
+	border:1px solid #999;
+}
+#usersList_up, #usersList_down {
+	height:21px;
+	background-color:#A1D5EB;
+	cursor:pointer;
+	padding:5px 10px;
+}
+#usersList_up {
+	border-bottom:1px solid #CCC;
+}
+#usersList_down {
+	margin-top:15px;
+	border-top:1px solid #CCC;
+}
+#usersList_up em, #usersList_down em {
+	display:block;
+	width:80;
+	height:17px;
+	margin:auto;
+	background:url(../static/img/upDown.png) no-repeat;
+}
+#usersList_up.none em, #usersList_down.none em {
+	background-image:url(../static/img/upDown1.png);
+}
+#usersList_down em {
+	background-position:bottom left;
+}
+#usersList_up:hover, #usersList_down:hover, #usersList_up.none, #usersList_down.none {
+	background:#EEE;
+}
+#usersList_main {
+	height:485px;
+	overflow:hidden;
+}
+ul.usersList_main {
+	position:relative;
+	margin:auto;
+	width:80px;
+	height:1111111px;
+}
+ul.usersList_main li {
+	position:relative;
+	width:80px;
+	border:1px solid #999;
+	height:80px;
+	background:url(../static/img/forbidden.png) no-repeat #FFF;
+	cursor:pointer;
+	margin:15px 0;
+}
+ul.usersList_main li:hover span {
+	background-color:#09F;
+}
+.usersList_main li img {
+	width:80px;
+	height:80px;
+}
+.usersList_main li span {
+	position:absolute;
+	width:80px;
+	text-align:center;
+	left:0px;
+	bottom:0px;
+	height:18px;
+	list-style:18px;
+	color:#FFF;
+	background:#09F;
+}
+.usersList_main li em {
+	position:absolute;
+	right:0px;
+	top:-12px;
+	width:32px;
+	height:32px;
+	z-index:999;
+}
+</style>
+</head>
+<body>
+
+<!--用户列表-->
+<div class="usersList">
+		<div id="usersList_up" class="none"><em class="up"></em></div>
+		<div id="usersList_main">
+				<ul class="usersList_main">
+						<li><img src="../static/img/users.jpg" alt="" /></li>
+						<li><img src="../static/img/users1.jpg" alt="" /></li>
+						<li><img src="../static/img/users2.jpg" alt="" /></li>
+						<li><img src="../static/img/users3.jpg" alt="" /></li>
+						<li><img src="../static/img/users.jpg" alt="" /></li>
+						<li><img src="../static/img/users1.jpg" alt="" /></li>
+						<li><img src="../static/img/users2.jpg" alt="" /></li>
+						<li><img src="../static/img/users3.jpg" alt="" /></li>
+						<li><img src="../static/img/users.jpg" alt="" /></li>
+						<li><img src="../static/img/users1.jpg" alt="" /></li>
+						<li><img src="../static/img/users2.jpg" alt="" /></li>
+						<li><img src="../static/img/users3.jpg" alt="" /></li>
+				</ul>
+		</div>
+		<div id="usersList_down"><em class="down"></em></div>
+</div>
+</div>
+</div>
+<script src="../static/js/jquery.js"></script> 
+<script src="../static/js/bootstrap.js"></script> 
+<script>
+		window.onload=function(){
+			//------用户列表
+		var i=5;
+		var page=1;	 
+		var height=$('#usersList_main').height();
+		var _height=height/i;
+		var len=$('#usersList_main').find('li').length;
+		if(len<=i){
+				$('#usersList_down').addClass('none');
+			}
+		if(!$('ul.usersList_main').is(':animated')){ 
+				$('#usersList_up').click(function(){
+					if(page!==1){
+						$('ul.usersList_main').animate({top:"+="+_height},'show');
+						page--;
+						$('#usersList_down').removeClass('none');
+						if(page==1){
+							$('#usersList_up').addClass('none');	
+						}
+					}
+				});
+				$('#usersList_down').click(function(){
+					if(page!==(len-i+1)){			
+							$('ul.usersList_main').animate({top:'-='+_height},'show');
+							page++;
+							$('#usersList_up').removeClass('none');
+							if(page==(len-i+1)){	
+								$('#usersList_down').addClass('none');
+							}
+						}
+				});
+		}
+}
+		</script>
+</body>
+</html>

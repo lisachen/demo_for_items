@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../static/css/bootstrap.css" rel="stylesheet">
+<style>
+#user_draw {
+	position:relative;
+	width:768px;
+	height:1024px;
+	padding:4px;
+	border:2px solid #666;
+	background-color:#fff;
+}
+/*--editor---*/
+.editor {
+	position:fixed;
+	z-index: 1050;
+	border:1px dashed #ddd;
+}
+.editor textarea {
+	display:inline;
+	border:0;
+	background-color:#fff;
+	font-size:14px;
+	padding-right:8px;
+	margin:0;
+	line-height:26px;
+	min-width:200px;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+.editor textarea:focus {
+	outline:0
+}
+.editor a {
+	position:absolute;
+	top:2px;
+	right:8px;
+	color:#666;
+	font-size:18px;
+}
+.editor a:hover, .editor a:active {
+	color:#111;
+}
+.editor button {
+	position:absolute;
+	bottom:15px;
+	right:5px;
+}
+.text {
+	position:absolute;
+}
+</style>
+</head>
+<body>
+<div class="container">
+		<div class="btn-group" id="radioButton">
+				<button type="button" class="btn" value="RaiXPS_07_pen">画笔</button>
+				<button type="button" class="btn" value="RaiXPS_08_unav" >橡皮</button>
+				<button type="button" class="btn" value="T" id="textBtn">文字</button>
+		</div>
+		<div  id="user_draw">
+				<div class="editor hide" id="textModal"> <a class="close">×</a>
+						<textarea></textarea>
+						<button type="button" class="btn btn-small pull-right hide" id="ok">OK</button>
+				</div>
+		</div>
+</div>
+<script src="../static/js/jquery.js"></script> 
+<script src="../static/js/bootstrap.js"></script> 
+<script>
+			//onTextComplet					
+			var $modal=$('#textModal'),
+					$textarea=$('#textModal textarea');
+			
+					
+			$('#radioButton button').click(function(){
+				$modal.hide();
+				$(this).addClass('active').siblings('button').removeClass('active');
+				var img=$(this).val();
+				var a = document.getElementById('user_draw');
+						a.onmouseover=function(){
+							this.style.cursor='url(../static/img/'+img+'.cur),default';
+						}
+						a.onmousedown=function(){
+							this.style.cursor='url(../static/img/'+img+'.cur),default';
+							return false;
+						}
+						
+
+						if( $('#textBtn').attr('class')=='btn active'){
+						$('#user_draw').click(function(event){
+							e = event ? event :(window.event ? window.event : null);
+							var paper=$('#user_draw'),
+									x0=paper.width(),
+									y0=paper.height(),
+								 	x1=e.screenX+5,
+									y1=e.screenY-80,
+									//x=x1>x0?x1-230:x1,
+									y=y1>y0?y1-50:y1;	
+							$modal.css('left',x1+'px');
+							$modal.css('top',y1+'px').slideDown();
+							$textarea.focus();
+							this.style.cursor='default';
+							
+							
+						});
+						}
+			});
+			
+			document.onkeydown=function(event){ 
+				e = event ? event :(window.event ? window.event : null); 
+				if(e.keyCode==13){ 
+					$modal.slideUp('hide');
+					text=$textarea.val();
+					
+					var El=$('.editor'), 
+						width=El.innerWidth(),
+							x=El.offset().left,
+							y=El.offset().top,
+						html='<div class="text" style="width:'+width+'px;left:'+x+'px;top:'+y+'px;">'+text+'</div>';
+						$('.container').append(html);
+						clear();
+						return false;
+				} 
+			}
+			
+			$('#textModal .close').click(function(){
+					$modal.hide();
+					clear();
+			});
+			
+			function clear(){
+				$textarea.val('');
+			}
+
+			
+		</script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../static/css/bootstrap.css"rel="stylesheet">
+<style>
+/*------左边flash框----------*/
+#leftBtn {
+	display:scroll;
+	position:fixed;
+	top:40%;
+	left:0px;
+	cursor:pointer;
+	color:#FFF;
+	text-align:center;
+	padding:35px 1px;
+	border-radius:0 6px 6px 0;
+	background-color:#3f9fd9;
+	background-color:#3f9fd9 \9;
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+	color:#eee;
+	text-shadow:none;
+	z-index: 1050;
+}
+#leftBtn:hover {
+	padding-left:4px;
+	background-color: #3f9fd9;
+}
+.flashOpen #leftBtn {
+	left:202px;
+}
+.flashModal {
+	position: fixed;
+	top:35%;
+	left:-100px;
+	z-index: 1050;
+	width: 200px;
+	height:400px;
+	margin: -100px 0 0 -200px;
+	background-color:#fff;
+	border:1px solid #DDD;
+}
+.flashOpen .flashModal {
+	left:200px;
+}
+.icon-chevron-left {
+	background-position: -432px -72px !important;
+}
+/*--用户列表--*/
+.usersList {
+	position:fixed;
+	top:13px;
+	right:5px;
+	height:580px;
+	width:440px;
+}
+#usersList_main {
+	position: absolute;
+	right:0;
+	overflow: hidden;
+	height:580px;
+	width:90px;
+	border:1px solid #DDD;
+}
+/*----NEW--userList---*/
+.users {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin:0 auto;
+	margin-right:3px;
+}
+.users li {
+	font-size: 14px;
+	vertical-align: top;
+	width:80px;
+	margin:5px;
+	text-align: center;
+	text-shadow: 0 1px white;
+	position:relative;
+	cursor:pointer;
+}
+.users li span.thumb {
+	border-radius: 50%;
+	display: block;
+	overflow: hidden;
+	margin:0 auto;
+	border: 3px solid white;
+	box-shadow: 0 1px 1px #818181;
+}
+.users li span.title {
+	font-size: 15px;
+	display: block;
+	margin-top: 4px;
+}
+.users-50 li span.thumb, .users-50 li span.thumb img {
+	width:50px;
+	height:50px;
+}
+/*--popover--*/
+.popover {
+	position: absolute;
+	right:0;
+	width:311px;
+	display:none;
+	text-align:left;
+	z-index: 1011;
+	padding:10px;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+.user-photo {
+	float:left;
+	width:40px;
+	height:40px;
+	border:1px solid #DDD;
+}
+.popover-content {
+	float:left;
+	margin-left:10px;
+	width:231px;
+}
+.popover-content h3 {
+	padding:0;
+	line-height:15px;
+}
+.popover-content p {
+	color:#333;
+}
+.user_content {
+	margin:8px 0;
+	height:65px;
+	overflow:hidden;
+}
+.popover-content .time {
+	color:#aaa;
+	margin-right:40px;
+}
+/*--滚动条---*/
+.Scrollbar-Track {
+	width: 6px;
+	height:578px;
+	position: absolute;
+	top:0;
+	right:0;
+	background-color: #eee;
+	border:1px solid #ddd;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius:5px;
+	border-radius:5px;
+}
+.Scrollbar-Handle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 6px;
+	background-color: #CCC;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #bbb;
+}
+.Scrollbar-Handle:hover {
+	border-bottom-color:#bcbcbc;
+	cursor:pointer;
+}
+</style>
+</head>
+<body>
+<!--左边flash框---->
+<div class=""> <span id="leftBtn"><i class="icon-chevron-right icon-white"></i></span>
+		<div class="flashModal"> </div>
+</div>
+
+<!--用户列表-->
+<div class="usersList">
+		<div class="popover left">
+				<div class="arrow"></div>
+				<img class="user-photo"/>
+				<div class="popover-content">
+						<h3></h3>
+						<p class="user_content"></p>
+						<p><span class="time">11月30日12:35</span><span class=""><a href="">转发(0)</a><a href="">评价(0)</a></span></p>
+				</div>
+		</div>
+		<div id="usersList_main">
+				<ul class="users users-50" id="users">
+						<li date-content="Sed posuere consectetur est at lobortis.Aenean eu leo quam. "> <span class="thumb"> <img src="../static/img/users.jpg"/> </span> <span class="title">dsfsf1</span></li>
+						<li date-content="Pellentesque ornare sem lacinia quam venenatis vestibulum."> <span class="thumb"> <img src="../static/img/users1.jpg"/> </span> <span class="title">收到</span> </li>
+						<li date-content="搅拌做酥料饼的材料；搅拌油漆。"> <span class="thumb"> <img src="../static/img/users2.jpg"/> </span> <span class="title">浮点数</span> </li>
+						<li date-content="约克郡布丁是一道可口的英国食品，由面糊制成，有点类似于美国的淡烤酥饼。"> <span class="thumb"> <img src="../static/img/users3.jpg"/> </span> <span class="title">上电股份</span> </li>
+						<li date-content="有加糖，所以在食用时候可以淋上蜂蜜，果酱，还是nutella巧克力酱。"> <span class="thumb"> <img src="../static/img/users.jpg"/> </span> <span class="title">复古包</span> </li>
+						<li date-content="松饼（一种淡烤的酥饼）；速制空壳面包"> <span class="thumb"> <img src="../static/img/users1.jpg"/> </span> <span class="title">复读生</span> </li>
+						<li date-content="Web前端开发者每天都与HTML、CSS、JavaScript打交道"> <span class="thumb"> <img src="../static/img/users2.jpg"/> </span> <span class="title">都来看i</span> </li>
+						<li date-content="Twitter推出的Bootstrap能够帮助Web前端开发者摆脱这种重复劳动。"> <span class="thumb"> <img src="../static/img/users3.jpg"/> </span> <span class="title">得分i</span> </li>
+						<li date-content="Bootstrap是我和Jacob Thornton编写的一个前端工具箱，目的是为了帮助设计师和Web前端开发人员快速有效地创建一个结构简单、性能优良、页面精致的Web应用。"> <span class="thumb"> <img src="../static/img/users.jpg"/> </span> <span class="title">热锅你</span> </li>
+				</ul>
+		</div>
+		<div id="Scrollbar-Container">
+				<div class="Scrollbar-Track">
+						<div class="Scrollbar-Handle"></div>
+				</div>
+		</div>
+</div>
+<script type="text/javascript" src="../static/js/jquery.js"></script> 
+<script type="text/javascript" src="../static/js/bootstrap.js"></script> 
+<!--滚动条--> 
+<script type="text/javascript" src="../static/js/jsScroller.js"></script> 
+<script type="text/javascript" src="../static/js/jsScrollbar.js"></script> 
+<script type="text/javascript">
+		var scroller  = null;
+		var scrollbar = null;
+		window.onload=function(){
+		var y=$('#usersList_main').height(),
+			x=$('#users').height(),
+			z=y/x*y+"px";
+		$('.Scrollbar-Handle').height(z);	
+		
+			//滚动条
+			 scroller  = new jsScroller(document.getElementById("users"),100,580);
+  		 scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);
+			
+			//------flash框
+			$('#leftBtn').click(function(){
+				$(this).parent().toggleClass('flashOpen');
+				$(this).find('i').toggleClass('icon-chevron-left');
+			});
+			
+			//----用户列表popover
+			$('.users li').hover(function(){
+					e = event ? event :(window.event ? window.event : null);
+							var y=e.clientY-72;
+					name=$(this).find('.title').text(),
+					imgSrc=$(this).find('img').attr('src'),
+					content=$(this).attr('date-content').substr(0,60),
+					y=y>0?y:0;
+				$('.user-photo').attr('src',imgSrc);
+				$('.popover h3').text(name);
+				$('.user_content').text(content);
+				$('.popover').css('top',y+'px').show();
+			},function(){
+				$('.popover').hide();
+			});
+			
+}
+		</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ajax demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="../static/css/bootstrap.css" rel="stylesheet">
+<style>
+.msgbox {
+	position: absolute;
+	width: 100%;
+	height: 24px;
+	top: 43px;
+	text-align: center;
+	display:none;
+}
+.msg {
+	white-space: nowrap;
+	padding: 3px 24px 3px;
+	color: white;
+	height: 20px;
+	line-height: 18px;
+	border-radius: 3px;
+	background:#68AF02;
+}
+</style>
+</head>
+<body>
+<span id="ajaxdemo" class="btn">demo</span> <span id="ajaxdemo2" class="btn">demo2</span>
+<div class="msgbox"> <span class="msg">加载中...</span> </div>
+<a href="#loding-modal" data-toggle="modal" data-backdrop="static" class="loding-modal hide">ajaxloding</a>
+<div id="loding-modal" class="modal fade hide"> <a id="close_modal" data-dismiss="modal"></a>
+		<div class="modal-body">
+				<p>提交中…</p>
+				<div class="progress progress-striped active">
+						<div class="bar" style="width: 100%;"></div>
+				</div>
+		</div>
+</div>
+</body>
+<script src="../static/js/jquery.js"></script>
+<script src="../static/js/bootstrap.js"></script>
+<script>
+        $(function(){
+            $('#ajaxdemo').click(function(){
+            $.ajax({
+                url:'www.baidu.com',
+                type:'post',
+                data:'data=big-data',
+                timeout:15000,
+                beforeSend:function(XMLHttpRequest){
+                    //alert('远程调用开始...');
+                    $(".loding-modal").click();
+                 },
+                success:function(data,textStatus){
+                    //alert('开始回调，状态文本值：'+textStatus+' 返回数据：'+data);
+                },
+                complete:function(XMLHttpRequest,textStatus){
+                    //alert('远程调用成功，状态文本值：'+textStatus);
+                    $('#close_modal').click();
+                },
+                error:function(XMLHttpRequest,textStatus,errorThrown){
+                    //alert('error...状态文本值：'+textStatus+" 异常信息："+errorThrown);
+                    $('#close_modal').click();
+                }
+               });
+            });
+            // demo 2
+            $('#ajaxdemo2').click(function(){
+            $.ajax({
+                url:'www.baidu.com',
+                type:'post',
+                data:'data=big-data',
+                timeout:15000,
+                beforeSend:function(XMLHttpRequest){
+                    $(".msgbox").show();
+                 },
+                success:function(data,textStatus){
+                },
+                complete:function(XMLHttpRequest,textStatus){
+                    $(".msgbox").hide();
+                },
+                error:function(XMLHttpRequest,textStatus,errorThrown){
+                    $(".msgbox").hide();
+                }
+               });
+            });
+        });
+    </script>
+</html>

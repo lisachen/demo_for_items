@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../static/css/bootstrap.css"rel="stylesheet">
+<style>
+.panle {
+	border:1px solid #000;
+	display:inline-block;
+	background:#FFF;
+	cursor:pointer;
+	z-index:1;
+}
+#btn {
+	position:absolute;
+}
+</style>
+</head>
+<body>
+<div class="container">
+		<input type="button" value="开" id="btn" class="btn active">
+		<canvas class="panle" id="panelA" width="400" height="300"></canvas>
+		<canvas class="panle" width="400" height="300"></canvas>
+</div>
+<script type="text/javascript">
+		window.onload=function(){
+			var canvas=document.querySelectorAll('canvas');
+			var a=document.querySelector('#btn');
+			var postion={};
+			var panelA=document.getElementById('panelA'),
+					panelA_x=panelA.offsetLeft,
+					panelA_y=panelA.offsetTop,
+					btnId=document.getElementById('btn');
+					
+					btnId.style.top=panelA_y+6+'px';
+					btnId.style.left=panelA_x+350+'px';
+			canvas[0].onmousemove=function(e){
+				var e=e||event;
+				drag(this,e);
+				if(a.className=='btn active'){
+					drag(canvas[1],postion.e);	
+				}else{
+					clear(canvas[1])
+				}
+			}
+			canvas[0].onmouseout=function(e){
+				clear(this)
+				clear(canvas[1])
+			}
+			a.onclick=function(){
+				if(this.className=='btn active'){
+					 this.className='btn'
+					 this.value='关'	;
+					 clear(canvas[1]);
+				}else{
+					 this.className='btn active'
+					 this.value='开'	;
+					drag(canvas[1],postion.e);
+				}
+			}
+			function drag(obj,e){
+				var cva=obj.getContext('2d')
+				cva.clearRect(0,0,obj.width,obj.height);
+				cva.beginPath();
+				cva.strokeStyle='red';
+				postion={x:e.clientX,y:e.clientY,e:e};
+				cva.arc(postion.x-panelA_x,postion.y-panelA_y,10,0,2*Math.PI);
+				cva.closePath();
+				cva.stroke();	
+			}
+			
+			function clear(obj){
+				var cva=obj.getContext('2d')
+				cva.clearRect(0,0,obj.width,obj.height)
+			}
+		}
+	</script>
+</body>
+</html>

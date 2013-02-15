@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../static/css/bootstrap.css"rel="stylesheet">
+<style>
+#chatBtn {
+	position:fixed;
+	right:5px;
+	bottom:15px;
+}
+.chatWindow {
+	position:absolute;
+	bottom:15px;
+	right:15px;
+	z-index:998px;
+}
+.chatWindow-hd {
+	background-color:#FAFAFA;
+	border:1px solid #DDD;
+	height:24px;
+}
+.chatWindow-hd h5 {
+	display:inline;
+	padding-right:50px;
+	margin-left:10px;
+	cursor:pointer;
+}
+.chatWindow-hd span {
+	float:right;
+}
+.chatWindow-hd a {
+	font-size:20px;
+	text-decoration:none;
+	color:#AAA;
+	line-height:24px;
+	margin-right:10px;
+	cursor:pointer;
+}
+.chatWindow-bd {
+	border-left:1px solid #DDD;
+	border-right:1px solid #DDD;
+	background-color:#FFF;
+}
+.chatWindow-bd, .Chat {
+	height:346px;
+}
+.Chat {
+	padding:6px;
+	padding-left:10px;
+	margin:0;
+	overflow-y:scroll;
+	overflow-x:none;
+}
+.chatWindow-ft {
+	height:30px;
+}
+.chatWindow-ft input {
+	width:230px;
+}
+</style>
+</head>
+<body>
+<div class="new-draw">
+		<button type="button" class="btn"  id="chatBtn"><i class="icon-comment"></i></button>
+		<div class="chatWindow hide" id="chatWindow">
+				<div class="chatWindow-hd">
+						<h5 class="chatWindow-user">Teacher</h5>
+						<span><a class="minWindow">&ndash;</a><a class="closeWindow">&times;</a></span> </div>
+				<div class="chatWindow-main">
+						<div class="chatWindow-bd">
+								<ul class="Chat" id="user_list">
+								</ul>
+						</div>
+						<div class="input-append chatWindow-ft">
+								<input type="text" id="send_text">
+								<button class="btn" type="submit" id="send" >发送</button>
+						</div>
+				</div>
+		</div>
+</div>
+</body>
+<script src="../static/js/jquery.js"></script>
+<script>
+		window.onload=function(){
+			var send=document.getElementById("send"),
+					user_list=document.getElementById("user_list"),
+					name='teacher',
+					send_text=document.getElementById("send_text");
+			send.onclick=function(){
+				if(send_text.value!=""){
+					var d=new Date(),
+							s=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+					user_list.innerHTML+='<li><a href="#">'+name+'&nbsp;&nbsp;'+s+'&nbsp;:&nbsp;&nbsp;</a>'+send_text.value+'</li>';
+					send_text.value="";
+				}
+				user_list.scrollTop=user_list.scrollHeight;
+			}
+			document.onkeydown=function(event){ 
+				e = event ? event :(window.event ? window.event : null); 
+				if(e.keyCode==13){ 
+						send.click();
+						return false;
+				} 
+			}
+			$('#chatBtn').click(function(){
+				$('#chatWindow').slideToggle();
+				$(this).hide();
+      });
+			$('.closeWindow').click(function(){
+					$('#chatWindow').hide();
+					$('#chatBtn').show();
+			});
+			$('.minWindow').click(function(){
+				$('.chatWindow-main').slideToggle();
+				$('.chatWindow-hd a').hide();
+			});
+			$('.chatWindow-user').click(function(){
+				$('.chatWindow-main').slideToggle();
+				$('.chatWindow-hd a').toggle();
+			});
+	}		
+		</script>
+</html>

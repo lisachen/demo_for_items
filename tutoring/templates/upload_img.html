@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>上传图片</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../static/css/bootstrap.css"rel="stylesheet">
+<style>
+.selectImg .modal-body {
+	overflow:hidden;
+}
+.selectImg p {
+	font-size:16px;
+}
+.img-preview {
+	border:1px solid #999;
+	padding:10px;
+	height:160px;
+}
+.selectImg .input-append input {
+	width:436px;
+}
+.selectImg .input-append button {
+	width:80px;
+}
+input.file {
+	font-size:12px;
+	margin:0px;
+	position:relative;
+	left:322px;
+	filter:alpha(opacity=0);
+	opacity:0;/*用于兼容firefox*/
+	cursor:pointer;
+	top: -32px;
+}
+.img-preview span {
+	display:block;
+	text-align:center;
+	font-size:60px;
+	margin-top:60px;
+	color:#DDD;
+}
+.img-preview img {
+	margin:auto;
+	max-height:160px;
+	text-align:center;
+}
+.focused {
+	border-color: #B94A48 !important;
+	color: #B94A48 !important;
+	box-shadow:0 0 6px #D59392 !important;
+	outline: 0 none;
+}
+</style>
+</head>
+<body>
+<a href="#selectImg" data-toggle="modal" data-keyboard="ture" data-backdrop="true"/>上传图片</a>
+<div class="modal selectImg hide fade" id="selectImg">
+		<div class="modal-header"> <a class="close" data-dismiss="modal">×</a>
+				<h3 class="inline">上传图片</h3>
+		</div>
+		<div class="modal-body">
+				<p><strong>方法1:</strong>上传本地图片</p>
+				<a hidefocus href="JavaScript:void(0);" class="addfile" style="margin-top:10px;">
+				<div class="input-append">
+						<input id="select_name" type="text">
+						<button class="btn" type="button" >选择</button>
+				</div>
+				<input type="file" hidefocus class="file">
+				</a>
+				<div class="img-preview"> <span>图片预览</span> <img class="hide" src="" alt="图片预览" /> </div>
+				<hr class="hr3">
+				<p><strong>方法2:</strong>上传网络图片</p>
+				<div class="input-append">
+						<input type="text" id="preview_name">
+						<button class="btn" type="button" id="preview">预览</button>
+				</div>
+		</div>
+		<div class="modal-footer">
+				<button class="btn btn-primary">确定</button>
+				<button class="btn btn-primary" data-dismiss="modal">取消</button>
+		</div>
+</div>
+<script src="../static/js/jquery.js"></script> 
+<script src="../static/js/bootstrap.js"></script> 
+<script>
+		window.onload=function(){
+			$('.file').change(function(){
+				var file_name=$('.file').val();
+				$('#select_name').val(file_name);
+				showImg(file_name,'#select_name');
+			});
+			
+			$('#preview').click(function(){
+				url_name=$('#preview_name').val();
+				showImg(url_name,'#preview_name');
+			});
+			
+			function showImg(name,input){
+				filepath=name.substring(name.lastIndexOf('.')+1,name.length); 
+				if(filepath !='jpg' && filepath !='gif' && filepath !='png' && filepath !='JPG' && filepath !='GIF' && filepath !='PNG'){ 
+					$(input).addClass('focused');
+				}else{
+				$('.img-preview span').hide();
+				$('.img-preview img').css('display', 'block').attr('src',name);
+				}
+			}
+		}
+			
+		</script>
+</body>
+</html>

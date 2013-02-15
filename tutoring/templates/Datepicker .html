@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>日历</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../static/css/bootstrap.css" rel="stylesheet">
+<link type="text/css" href="../static/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container"> 
+		<!-- Datepicker -->
+		<h2 id="date"></h2>
+		<div id="datepicker"></div>
+		<!--end datepicker--> 
+</div>
+<script src="../static/js/jquery.js"></script> 
+<script src="../static/js/bootstrap.js"></script> 
+<!--daterangepicker--> 
+<script type="text/javascript" src="../static/js/jquery-ui-1.8.16.custom.min.js"></script> 
+<script type="text/javascript" src="../static/js/date.js"></script> 
+<script type="text/javascript" src="../static/js/daterangepicker.jQuery.js"></script> 
+<script>
+window.onload=function(){
+var d=new Date(),
+	s=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+$('#date').text(s); 
+set_date_bgc('2013','1','8','red');//如果时间刚好在当前月，需在页面加载后就执行
+}
+
+$('#datepicker').mouseup(function(){//翻日历时加载函数
+	setTimeout("set_date_bgc('2013','1','8','red')",600);//$('#datepicker')的事件有冲突，所有要延迟执行
+});
+$('#datepicker').click(function(){
+	var d=$(this).val(),
+		s=d.substr(6,4)+"-"+d.substr(0,2)+"-"+d.substr(3,2);
+	$('#date').text(s);	
+});
+function set_date_bgc(year,month,day,color){	
+	var _month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+			y=$('.ui-datepicker-year').text(),//年
+			m=$('.ui-datepicker-month').text(),//月
+			d=$('#datepicker td .ui-state-default');//日
+	for(var i in _month){if(_month[i]==m){_m=i*1+1}} //将月份改成数字
+	//--判断具体时间
+	if(y==year){
+		if(_m==month){
+			for(var i=0;i<30;i++){
+				if(d[i].text==day){
+						d[i].parentNode.style.backgroundColor=color;//设置颜色
+					}
+				}
+			}
+		}
+}
+</script>
+</body>
+</html>

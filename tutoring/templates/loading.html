@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../static/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container"><br/>
+		<br/>
+		<div style="width:300px; text-align:center;">
+				<div class="progress progress-info progress-striped active"> <span class="bar" id="pro"></span> </div>
+				<span id="pro_num"></span> </div>
+</div>
+<script src="../static/js/jquery.js"></script> 
+<script>
+window.onload=function(){
+	var time=setInterval('proccess();',160) ;			
+} 
+var i=0,
+pro=document.getElementById('pro'),
+pro_num=document.getElementById('pro_num');
+function proccess(){
+ pro.style.width=i+'%';
+ if(i<=100){
+	 pro_num.innerHTML=i+'%';
+	 if(i>70){ i++;} else{i=i+5;}
+	}else{
+		pro_num.innerHTML='100%';
+			clearInterval(time);
+	}
+}
+</script>
+</body>
+</html>
