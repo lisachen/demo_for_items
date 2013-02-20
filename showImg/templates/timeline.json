@@ -1,76 +1,222 @@
-
 {
     "timeline":
-    {	
-		"headline":"出生",
+    {
+        "headline":"The Kitchen Sink, Évier de la Cuisine ",
         "type":"default",
-		"text":"<p>公元前14～前11世纪</p><p>兽骨是我国最原始的文化传承载体。</p>",
-		"asset":{
-			"media":"../static/img/wedding (1).jpg",
-			"thumbnail":"../static/img/wedding (1).jpg",
-			"credit":"",
-			"caption":""
-         },
+		"startDate":"1984",
+		"text":"An example of the different kinds of stuff you can do.",
+		"status":"girl",
+		"asset":
+        {
+            "media":"../static/img/medium/wedding (1).jpg",
+            "credit":"",
+            "caption":""
+        },
+		
         "date": [
             {
-                "startDate":"1991",
-                "headline":"开口说话",
-                "text":"<p>印刷术的改革，知识传递效率得到了飞跃性的突破。</p>",
+                "startDate":"1985,1,18",
+                "headline":"instagram",
+                "text":"To add a YouTube video, just add a link to it.",
+								"status":"boy",
                 "asset":
                 {
-                    "media":"../static/img/wedding (2).jpg",
-										"thumbnail":"../static/img/wedding (2).jpg",
+                    "media":"../static/img/medium/wedding (2).jpg",
+                    "credit":"",
+                    "caption":"Directed and Edited by Matt Mayer, Produced by Seth Keim, Written by Eliot Glazer. Featuring Eliot and Ilana Glazer, who are siblings, not married."
+                }
+            },
+			{
+                "startDate":"1986,1,18",
+                "headline":"instagram",
+                "text":"",
+								"status":"girl",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (3).jpg",
                     "credit":"",
                     "caption":""
                 }
             },
 			{
-                "startDate":"1992",
-                "headline":"开始走路",
-                "text":"开始了我国最原始的教学模式",
+                "startDate":"1989,1,18",
+                "headline":"Google Map",
+                "text":"Just add the link to the map!",
+								"status":"girl",
                 "asset":
                 {
-                    "media":"../static/img/wedding (3).jpg",
-					"thumbnail":"../static/img/wedding (3).jpg",
-                    "credit":"",
-                    "caption":""
-                }
-            },
-			{
-                "startDate":"1996",
-                "headline":"幼儿园",
-                "text":"传统的一对多授课方式进行文化普及20世纪",
-                "asset":
-                {
-                    "media":"../static/img/wedding (4).jpg",
-					"thumbnail":"../static/img/wedding (4).jpg",
-                    "credit":"",
-                    "caption":""
-                }
-            },
-			{
-                "startDate":"1998",
-                "headline":"小学",
-                "text":"高新科技带来的教学载体改革，引领教学新模式",
-                "asset":
-                {
-                    "media":"../static/img/wedding (5).jpg",
-					"thumbnail":"../static/img/wedding (5).jpg",
+                    "media":"../static/img/medium/wedding (4).jpg",
                     "credit":"",
                     "caption":""
                 }
             },
 
 			{
-                "startDate":"2003",
-                "headline":"初中",
+                "startDate":"1990,3",
+                "headline":"Le portrait mystérieux ",
+                "text":"To add a YouTube video, just add a link to it.",
+								"status":"girl",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (5).jpg",
+                    "credit":"Georges Méliès",
+                    "caption":"Le portrait mystérieux"
+                }
+            },
+			{
+                "startDate":"1991,4",
+                "headline":"L'oeuf du sorcier",
+                "text":"",
+								"status":"boy",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (6).jpg",
+                    "credit":"Georges Méliès",
+                    "caption":"L'oeuf du sorcier"
+                }
+            },
+			{
+                "startDate":"1992,8",
+                "headline":"Le juif errant",
+                "text":"",
+								"status":"girl",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (7).jpg",
+                    "credit":"Georges Méliès",
+                    "caption":"Le juif errant"
+                }
+            },
+			{
+                "startDate":"1993,5",
+                "headline":"Le tonnerre de Jupiter",
+                "text":"",
+								"status":"boy",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (8).jpg",
+                    "credit":"Georges Méliès",
+                    "caption":"Le tonnerre de Jupiter"
+                }
+            },
+			{
+                "startDate":"1994,2,7",
+                "headline":"Flickr",
+								"status":"girl",
                 "text":"",
                 "asset":
                 {
-                    "media":"../static/img/wedding (6).jpg",
-					"thumbnail":"../static/img/wedding (6).jpg",
+                    "media":"../static/img/medium/wedding (9).jpg",
+                    "credit":"Zach Wise",
+                    "caption":"Feels like Siberia again"
+                }
+            },
+			{
+                "startDate":"1995,2,7",
+                "headline":"Flickr",
+                "text":"",
+								"status":"boy",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (7).jpg",
+                    "credit":"Zach Wise",
+										"status":"together",
+                    "caption":"Enjoying the snow while sheltered at the train station"
+                }
+            },
+			{
+                "startDate":"1996,2,7",
+                "headline":"A Tweet",
+                "text":"To add a tweet, just add the link.",
+								"status":"girl",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (11).jpg",
                     "credit":"",
-                    "caption":"我们的产品即将上线"
+                    "caption":""
+                }
+            },
+
+			{
+                "startDate":"1997,1,18",
+                "headline":"SoundCloud ",
+                "text":"Just add a link to the track",
+								"status":"together",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (9).jpg",
+                    "credit":"Radiohead Separator - Anstam RMX",
+                    "caption":""
+                }
+            },
+			{
+                "startDate":"1998,12,23",
+                "headline":"Vimeo",
+                "text":"<p>Whitestone Motion Pictures proudly presents 'Jack and the Dustbowl', a short film about overcoming adversity and making the impossible, possible.</p><p>Jack Spriggs, a poor dust bowl farmer from Alabama, is determined to keep his family's land. Set during the Great Depression, record heat waves and over-farming have turned the once fertile soil into worthless dust. Refusing to become a victim of his circumstances, Jack embraces his surroundings and digs in. Jack's tenacious spirit and ingenuity will either keep his family together or he'll lose everything trying.</p>",
+								"status":"girl",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (1).jpg",
+                    "credit":"Whitestone Motion Pictures",
+										"status":"together",
+                    "caption":"Whitestone Motion Pictures proudly presents 'Jack and the Dustbowl', a short film about overcoming adversity and making the impossible, possible."
+                }
+            },
+			{
+                "startDate":"1999,2,10",
+                "headline":"Some Tweet Response also",
+								"status":"together",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (2).jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+			{
+                "startDate":"2001,12,10",
+                "headline":"Some Tweet Response",
+								"status":"boy",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (3).jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+						{
+                "startDate":"2003,12,10",
+                "headline":"Some Tweet Response",
+								"status":"together",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (3).jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+						{
+                "startDate":"2005,12,23",
+                "headline":"Vimeo",
+                "text":"<p>Whitestone Motion Pictures proudly presents 'Jack and the Dustbowl', a short film about overcoming adversity and making the impossible, possible.</p><p>Jack Spriggs, a poor dust bowl farmer from Alabama, is determined to keep his family's land. Set during the Great Depression, record heat waves and over-farming have turned the once fertile soil into worthless dust. Refusing to become a victim of his circumstances, Jack embraces his surroundings and digs in. Jack's tenacious spirit and ingenuity will either keep his family together or he'll lose everything trying.</p>",
+								"status":"boy",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (1).jpg",
+                    "credit":"Whitestone Motion Pictures",
+										"status":"together",
+                    "caption":"Whitestone Motion Pictures proudly presents 'Jack and the Dustbowl', a short film about overcoming adversity and making the impossible, possible."
+                }
+            },
+						{
+                "startDate":"2008,12,10",
+                "headline":"Some Tweet Response",
+								"status":"together",
+                "asset":
+                {
+                    "media":"../static/img/medium/wedding (3).jpg",
+                    "credit":"",
+                    "caption":""
                 }
             }
         ]

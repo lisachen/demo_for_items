@@ -60,6 +60,7 @@ body {
 	width: 100%;
 	position: relative;
 	background: transparent url(../img/light.png) fixed no-repeat center top;
+	margin-top:40px;
 }
 #search{
 	width:90px;

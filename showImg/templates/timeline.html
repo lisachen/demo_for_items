@@ -4,12 +4,14 @@
 <meta charset="utf-8">
 <title>时间轴</title>
 <link href="../static/css/timeline.css" rel="stylesheet">
-<script src="../static/js/jquery-1.8.3.min.js"></script>
 </head>
-
 <body>
+
 <!--时间轴-->
 <div id="timeline-embed"></div>
+<!--时间轴-end -->
+
+<script src="../static/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
 		    var timeline_config = {
 				width: 	"100%",
@@ -17,11 +19,16 @@
 				source: 'timeline.json',
 				//start_at_end:	true,					//OPTIONAL
 				//hash_bookmark: true,					//OPTIONAL
-				css: 	'../resource/css/timeline.css',	//OPTIONAL
-				js: 	'../static/js/timeline/timeline-min.js',	//OPTIONAL
+				css: 	'../static/css/timeline.css',	//OPTIONAL
+				js: 	'../static/js/timeline/timeline.js',	//OPTIONAL
 			}
-		</script> 
+</script> 
 <script type="text/javascript" src="../static/js/timeline/timeline-embed.js"></script> 
-<!--时间轴-end -->
+<script>
+
+//			window.onload=function(){
+//			setInterval(function(){$('.nav-next').click();},5000);
+//			}
+</script>
 </body>
 </html>
